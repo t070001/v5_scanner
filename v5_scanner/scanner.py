@@ -34,7 +34,6 @@ KLINES_LIMIT = 120
 OI_LIMIT = 30
 TAKER_LIMIT = 30
 API_BASE = "https://fapi.binance.com"
-AUTO_DELETE_LOG_DAYS = 90
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -49,8 +48,10 @@ def get_logger():
     if not logger.handlers:
         logger.setLevel(logging.INFO)
         os.makedirs(os.path.join(BASE_DIR, "logs"), exist_ok=True)
-        log_file = os.path.join(BASE_DIR, "logs", f"{datetime.now().strftime('%Y-%m-%d')}.log")
-        fh = logging.FileHandler(log_file, encoding="utf-8")
+        # Use TimedRotatingFileHandler for daily rotation at midnight
+        from logging.handlers import TimedRotatingFileHandler
+        log_file = os.path.join(BASE_DIR, "logs", "scanner.log")
+        fh = TimedRotatingFileHandler(log_file, when="midnight", interval=1, backupCount=90, encoding="utf-8")
         fh.setLevel(logging.INFO)
         fmt = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s")
         fh.setFormatter(fmt)
