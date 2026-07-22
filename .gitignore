@@ -1,7 +1,6 @@
 analysis_tools/venv/
 analysis_tools/__pycache__/
-deploy/v5_scanner.zip
-deploy/v5_scanner/
+deploy/
 v5_scanner/data/
 v5_scanner/logs/
 v5_scanner/__pycache__/
@@ -11,3 +10,10 @@ v5_scanner/tests/
 .env
 docs/
 .superpowers/
+Analysis Guide.md
+PROJECT_RULES.md
+analyze.txt
+handover_v5_strategy.md
+implementation_plan.md
+v4_project_handover.md
+v4_scanner/
