@@ -1,0 +1,2 @@
+# No third-party dependencies required
+# Scanner uses only Python stdlib
