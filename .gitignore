@@ -1,2 +1,4 @@
 analysis_tools/venv/
 analysis_tools/__pycache__/
+deploy/v5_scanner.zip
+deploy/v5_scanner/
