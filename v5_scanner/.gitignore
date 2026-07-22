@@ -3,5 +3,3 @@ logs/
 __pycache__/
 *.pyc
 .env
-analysis_tools/venv/
-analysis_tools/__pycache__/
