@@ -1,6 +1,6 @@
 # Cross Analysis Report
 
-Generated: 2026-07-22 20:17 | Total Signals: 132
+Generated: 2026-07-22 20:46 | Total Signals: 188
 
 ---
 
@@ -86,6 +86,7 @@ Generated: 2026-07-22 20:17 | Total Signals: 132
 | funding_bucket | volume_bucket | Samples | 3d Win% | 3d Avg | 7d Win% | 7d Avg | 14d Win% | 14d Avg |
 |------|------|---------|---------|--------|---------|--------|----------|---------|
 | NEGATIVE | EXTREME [樣本不足] | 0 | N/A | N/A | N/A | N/A | N/A | N/A |
+| NEGATIVE | HIGH [樣本不足] | 0 | N/A | N/A | N/A | N/A | N/A | N/A |
 | NEGATIVE | LOW [樣本不足] | 0 | N/A | N/A | N/A | N/A | N/A | N/A |
 | NEGATIVE | NORMAL [樣本不足] | 0 | N/A | N/A | N/A | N/A | N/A | N/A |
 | NEUTRAL | EXTREME [樣本不足] | 0 | N/A | N/A | N/A | N/A | N/A | N/A |

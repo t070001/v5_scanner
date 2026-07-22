@@ -2,3 +2,12 @@ analysis_tools/venv/
 analysis_tools/__pycache__/
 deploy/v5_scanner.zip
 deploy/v5_scanner/
+v5_scanner/data/
+v5_scanner/logs/
+v5_scanner/__pycache__/
+v5_scanner/analysis/
+v5_scanner/tests/
+*.pyc
+.env
+docs/
+.superpowers/
