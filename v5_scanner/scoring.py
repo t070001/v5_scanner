@@ -14,12 +14,12 @@ def calculate_base_score(indicators, weights):
     Base score: weighted sum of OI breakout, expansion, mid change, taker.
     Each factor is 0.0-1.0, multiplied by weight percentage, scaled to 0-100.
     """
-    bw = weights["base_weights"]
+    bw = weights.get("base_weights", {})
     score = (
-        indicators["score_oi_breakout"] * bw["oi_breakout"]
-        + indicators["score_oi_expansion"] * bw["oi_expansion"]
-        + indicators["score_oi_mid_change"] * bw["oi_mid_change"]
-        + indicators["score_taker"] * bw["taker"]
+        indicators.get("score_oi_breakout", 0.0) * bw.get("oi_breakout", 0.0)
+        + indicators.get("score_oi_expansion", 0.0) * bw.get("oi_expansion", 0.0)
+        + indicators.get("score_oi_mid_change", 0.0) * bw.get("oi_mid_change", 0.0)
+        + indicators.get("score_taker", 0.0) * bw.get("taker", 0.0)
     )
     return round(score * 100, 2)
 
