@@ -50,13 +50,15 @@ def categorize_volume(volume_ratio, thresholds=None):
     Categorize volume ratio into LOW / NORMAL / HIGH / EXTREME.
     thresholds dict should have keys:
         'volume_low' (default 0.8) - ratios below this are LOW
+        'volume_high' (default 1.2) - ratios at or below this (but above volume_low) are NORMAL;
+                                       ratios above this but at or below volume_extreme are HIGH
         'volume_extreme' (default 2.0) - ratios above this are EXTREME
     """
     if thresholds is None:
-        thresholds = {"volume_low": 0.8, "volume_extreme": 2.0}
+        thresholds = {"volume_low": 0.8, "volume_high": 1.2, "volume_extreme": 2.0}
     if volume_ratio < thresholds.get("volume_low", 0.8):
         return "LOW"
-    elif volume_ratio <= 1.2:
+    elif volume_ratio <= thresholds.get("volume_high", 1.2):
         return "NORMAL"
     elif volume_ratio <= thresholds.get("volume_extreme", 2.0):
         return "HIGH"
@@ -133,3 +135,6 @@ def calculate_overextended(dist_ma25, dist_support_low, dist_high, thresholds):
     if dist_high > thresholds.get("overextended_high", 10.0):
         return True
     return False
+
+
+# Note: get_market_regime() is intentionally in scanner.py because it requires API calls (indicators are pure).
